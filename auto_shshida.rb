@@ -23,7 +23,9 @@ canvas.save_screenshot('page.png')
 # 開始
 
 num = 0
-while num < 100 do
+check = ""
+the_same_count = 0 
+while num <= 100 do
   canvas.save_screenshot('page.png')
 
   cut_imag
@@ -33,20 +35,35 @@ while num < 100 do
 
   content = text.strip.split(' ').sort_by{|x| -x.size}[0]
 
-
   File.open("text.txt", mode = "a"){|f|
     f.write(content) 
     f.write('\n')
   }
   puts content
-  content.split('').each do |i|
-    driver.action.send_keys(i).perform
-    p i
-    sleep 0.1
+
+  if !content
+    puts 'content is undefind'
+    the_same_count += 1
+    num = 101 if the_same_count == 5
+    sleep 3
+  else
+    if check == content
+      num = 101 if the_same_count == 5
+      the_same_count += 1 
+      puts "count!!"
+      puts the_same_count
+    end
+
+    content.split('').each do |i|
+      driver.action.send_keys(i).perform
+      p i
+      # sleep 0.03
+      sleep 0.1
+    end
+    check = content
   end
-  num = num + 1
 end
 
-
+puts 'end'
 
 sleep
