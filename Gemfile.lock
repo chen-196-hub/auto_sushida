@@ -1,0 +1,36 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    call-me (0.0.2.3)
+      refining
+    childprocess (4.1.0)
+    ffi (1.15.5)
+    ffi-extra (0.1.0)
+      ffi
+    ffi-inline (0.0.4.3)
+      ffi (>= 0.4.0)
+    iso-639 (0.3.5)
+    refining (0.0.5.5)
+    rexml (3.2.5)
+    rubyzip (2.3.2)
+    selenium-webdriver (4.6.1)
+      childprocess (>= 0.5, < 5.0)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2, < 3.0)
+      websocket (~> 1.0)
+    tesseract-ocr (0.1.8)
+      call-me
+      ffi-extra
+      ffi-inline
+      iso-639
+    websocket (1.2.9)
+
+PLATFORMS
+  x86_64-darwin-19
+
+DEPENDENCIES
+  selenium-webdriver (~> 4.6)
+  tesseract-ocr (~> 0.1.8)
+
+BUNDLED WITH
+   2.3.18
