@@ -1,15 +1,13 @@
 require 'selenium-webdriver'
-# require 'tesseract-ocr'
 require 'open3'
-require_relative 'image_cutter'
 
 driver = Selenium::WebDriver.for :chrome
-driver.get "https://sushida.net/play.html"
+driver.get 'https://sushida.net/play.html'
 
 sleep 7
 
 canvas = driver.find_element(:id, '#canvas')
-driver.action.move_by(canvas.location.x + 260, canvas.location.y + 260).click.perform 
+driver.action.move_by(canvas.location.x + 260, canvas.location.y + 260).click.perform
 # コース選択
 sleep 2
 case ARGV[0]
@@ -32,22 +30,22 @@ sleep 2
 
 # 開始
 num = 0
-check = ""
-the_same_count = 0 
-while num <= 100 do
+check = ''
+the_same_count = 0
+while num <= 100
   canvas.save_screenshot('page.png')
-
+  require_relative 'image_cutter'
   cut_imag(ARGV[0])
-  text, _xxx, _yyy = Open3.capture3("tesseract cropped.jpg - -l eng")
+  text, _xxx, _yyy = Open3.capture3('tesseract cropped.jpg - -l eng')
 
-  puts text.strip
+  # puts text.strip
 
-  content = text.strip.split(' ').sort_by{|x| -x.size}[0]
+  content = text.strip.split(' ').sort_by { |x| -x.size }[0]
 
-  File.open("text.txt", mode = "a"){|f|
-    f.write(content) 
-    f.write('\n')
-  }
+  File.open('text.txt', mode = 'a') do |f|
+    f.write(content)
+    f.write('  ')
+  end
   puts content
 
   if !content
@@ -58,15 +56,15 @@ while num <= 100 do
   else
     if check == content
       num = 101 if the_same_count == 5
-      the_same_count += 1 
-      puts "count!!"
-      puts the_same_count
+      the_same_count += 1
+      puts "count!!#{the_same_count}"
     end
 
     content.split('').each do |i|
       driver.action.send_keys(i).perform
-      p i
-      # sleep 0.03
+      # p i
+
+      # sleep 0.03 # ほぼ無限
       sleep 0.06
       # sleep 0.1
     end
