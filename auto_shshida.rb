@@ -9,26 +9,35 @@ driver.get "https://sushida.net/play.html"
 sleep 7
 
 canvas = driver.find_element(:id, '#canvas')
-driver.action.move_by(canvas.location.x + 260, canvas.location.y + 260).click.perform
+driver.action.move_by(canvas.location.x + 260, canvas.location.y + 260).click.perform 
 # コース選択
-sleep 3
-driver.action.click.perform
+sleep 2
+case ARGV[0]
+when 'easy', 'e'
+  driver.action.move_by(0, -70).click.perform # お手軽
+when 'normal', 'n'
+  driver.action.click.perform
+when 'hard', 'h'
+  driver.action.move_by(0, 70).click.perform # 高級
+else
+  driver.action.click.perform
+end
+
 sleep 1
 
 driver.action.click.perform
 sleep 1
 driver.action.key_down(:enter).key_up(:enter).perform
 sleep 2
-canvas.save_screenshot('page.png')
-# 開始
 
+# 開始
 num = 0
 check = ""
 the_same_count = 0 
 while num <= 100 do
   canvas.save_screenshot('page.png')
 
-  cut_imag
+  cut_imag(ARGV[0])
   text, _xxx, _yyy = Open3.capture3("tesseract cropped.jpg - -l eng")
 
   puts text.strip
@@ -58,7 +67,8 @@ while num <= 100 do
       driver.action.send_keys(i).perform
       p i
       # sleep 0.03
-      sleep 0.1
+      sleep 0.06
+      # sleep 0.1
     end
     check = content
   end
