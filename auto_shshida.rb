@@ -38,15 +38,12 @@ while num <= 100
   cut_imag(ARGV[0])
   text, _xxx, _yyy = Open3.capture3('tesseract cropped.jpg - -l eng')
 
-  # puts text.strip
-
   content = text.strip.split(' ').sort_by { |x| -x.size }[0]
 
   File.open('text.txt', mode = 'a') do |f|
     f.write(content)
     f.write('  ')
   end
-  puts content
 
   if !content
     puts 'content is undefind'
@@ -60,14 +57,26 @@ while num <= 100
       puts "count!!#{the_same_count}"
     end
 
-    content.split('').each do |i|
+    sym = [
+      '\\',
+      '|',
+      '/',
+      '-'
+    ]
+    content.split('').each_with_index do |i, idx|
       driver.action.send_keys(i).perform
-      # p i
-
+      # progress start
+      print "\r"
+      print " (#{content.split('').size == idx + 1 ? 'o' : sym[idx % sym.length]}) [ "
+      print content[0, idx + 1].ljust(content.size, '.')
+      print ' ]'
       # sleep 0.03 # ほぼ無限
       sleep 0.06
       # sleep 0.1
     end
+    puts ''
+    # progress end
+
     check = content
   end
 end
