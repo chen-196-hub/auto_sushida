@@ -2,6 +2,9 @@
 
 寿司打を自動化にしました。
 
+![auto_sushida](https://user-images.githubusercontent.com/78460152/203343949-b9909116-3207-4b44-b53a-339423e106c0.gif)
+
+
 # 起動
 
 ### おすすめプラン
