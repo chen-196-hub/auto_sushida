@@ -46,8 +46,12 @@ while num <= 100
   end
 
   if !content
-    puts 'content is undefind'
+    # puts 'content is undefind'
     the_same_count += 1
+    print "\r"
+    print " [ "
+    print "XXXXX"[0, the_same_count].ljust(5, '.')
+    print ' ]'
     num = 101 if the_same_count == 5
     sleep 3
   else
@@ -55,6 +59,10 @@ while num <= 100
       num = 101 if the_same_count == 5
       the_same_count += 1
       puts "count!!#{the_same_count}"
+      print "\r"
+      print " [ "
+      print "XXXXX"[0, the_same_count].ljust(5, '.')
+      print ' ]'
     end
 
     sym = [
