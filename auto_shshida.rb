@@ -71,7 +71,7 @@ while num <= 100
       print content[0, idx + 1].ljust(content.size, '.')
       print ' ]'
       # sleep 0.03 # ほぼ無限
-      sleep 0.06
+      sleep 0.06 # 割と安定
       # sleep 0.1
     end
     puts ''
