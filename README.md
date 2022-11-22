@@ -18,8 +18,11 @@ ruby auto_shshida.rb n  #or ruby auto_shshida.rb normal
 ruby auto_shshida.rb h  #or ruby auto_shshida.rb hard
 ```
 
-
-⚠️ 2022/11/22現在、お手頃プランについては、画像認証うまくできないときがあるため、非推奨になっています。
+### お手軽プラン
+```ruby
+ruby auto_shshida.rb e  #or ruby auto_shshida.rb easy
+```
+⚠️ 2022/11/22現在、お手軽プランについては、画像認証うまくできないときがあるため、非推奨になっています。
 
 
 # 使用技術
