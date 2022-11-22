@@ -5,7 +5,7 @@
 # 起動
 
 ### おすすめプラン
-```
+```ruby
 ruby auto_shshida.rb
 ```
 または
