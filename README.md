@@ -46,4 +46,4 @@ brew install tesseract
 bundle install
 ```
 
-もし不明点がありました、issueにてご連絡いただければ幸いです。
+もし不明点がありましたら、issueにてご連絡いただければ幸いです。
