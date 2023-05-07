@@ -29,7 +29,7 @@ ruby auto_shshida.rb e  #or ruby auto_shshida.rb easy
 
 
 # 使用技術
-- ruby 2.7.2（任意）
+- ruby 2.7.2
 - tesseract 光学画像認証
 - gem
   - selenium-webdriver
