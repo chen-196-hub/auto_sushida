@@ -39,6 +39,27 @@ ruby auto_shshida.rb e  #or ruby auto_shshida.rb easy
 seleniumについて、chromeなどのブラウザはdriverが必要
 
 ```
+brew install chromedriver
+```
+
+```
+ convert -version
+```
+下記出ていれば問題ない
+
+```
+Version: ImageMagick 6.8.9-7 Q16 x86_64 2014-09-11 http://www.imagemagick.org
+Copyright: Copyright (C) 1999-2014 ImageMagick Studio LLC
+Features: DPC Modules
+Delegates: bzlib fftw freetype jng jpeg lcms ltdl lzma png tiff xml zlib
+```
+
+`zsh: command not found: convert`の場合は
+```
+brew install imagemagick
+```
+
+```
 brew install tesseract
 ```
 
