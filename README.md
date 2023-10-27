@@ -42,6 +42,8 @@ seleniumについて、chromeなどのブラウザはdriverが必要
 brew install chromedriver
 ```
 
+
+MiniMagickについて
 ```
  convert -version
 ```
@@ -59,6 +61,7 @@ Delegates: bzlib fftw freetype jng jpeg lcms ltdl lzma png tiff xml zlib
 brew install imagemagick
 ```
 
+tesseractのインストール
 ```
 brew install tesseract
 ```
