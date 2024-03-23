@@ -29,7 +29,7 @@ ruby auto_shshida.rb e  #or ruby auto_shshida.rb easy
 
 
 # 使用技術
-- ruby 2.7.2
+- ruby 3.2.2
 - tesseract 光学画像認証
 - gem
   - selenium-webdriver
@@ -74,5 +74,5 @@ bundle install
 
 ## 免責事項
 
-当システムは研究の目的に作ったもので、
+当システムは研究と自己研鑽の目的に作ったものとなり、
 ご利用、もしくはご利用になれないことにより生じるいかなるトラブルや損害には、当方は一切の責任を負いません。

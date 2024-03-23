@@ -1,24 +1,23 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    childprocess (4.1.0)
-    mini_magick (4.11.0)
-    rexml (3.2.5)
+    base64 (0.2.0)
+    mini_magick (4.12.0)
+    rexml (3.2.6)
     rubyzip (2.3.2)
-    selenium-webdriver (4.6.1)
-      childprocess (>= 0.5, < 5.0)
+    selenium-webdriver (4.18.1)
+      base64 (~> 0.2)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    websocket (1.2.9)
+    websocket (1.2.10)
 
 PLATFORMS
-  ruby
-  x86_64-darwin-19
+  arm64-darwin-22
 
 DEPENDENCIES
   mini_magick
-  selenium-webdriver (~> 4.6)
+  selenium-webdriver
 
 BUNDLED WITH
-   2.3.18
+   2.4.10

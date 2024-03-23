@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'selenium-webdriver', '~> 4.6'
+gem 'selenium-webdriver'
 
 gem 'mini_magick'
